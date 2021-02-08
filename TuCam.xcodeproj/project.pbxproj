@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18B7051C25D1C582008FB467 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7051B25D1C582008FB467 /* AppDelegate.swift */; };
+		18B7051E25D1C582008FB467 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7051D25D1C582008FB467 /* SceneDelegate.swift */; };
+		18B7052025D1C582008FB467 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7051F25D1C582008FB467 /* ViewController.swift */; };
+		18B7052325D1C582008FB467 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B7052125D1C582008FB467 /* Main.storyboard */; };
+		18B7052525D1C584008FB467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B7052425D1C584008FB467 /* Assets.xcassets */; };
+		18B7052825D1C584008FB467 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B7052625D1C584008FB467 /* LaunchScreen.storyboard */; };
+		18B7053325D1C585008FB467 /* TuCamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7053225D1C585008FB467 /* TuCamTests.swift */; };
+		18B7053E25D1C585008FB467 /* TuCamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7053D25D1C585008FB467 /* TuCamUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18B7052F25D1C585008FB467 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18B7051025D1C582008FB467 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18B7051725D1C582008FB467;
+			remoteInfo = TuCam;
+		};
+		18B7053A25D1C585008FB467 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18B7051025D1C582008FB467 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18B7051725D1C582008FB467;
+			remoteInfo = TuCam;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18B7051825D1C582008FB467 /* TuCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B7051B25D1C582008FB467 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18B7051D25D1C582008FB467 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		18B7051F25D1C582008FB467 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18B7052225D1C582008FB467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18B7052425D1C584008FB467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18B7052725D1C584008FB467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18B7052925D1C584008FB467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B7052E25D1C585008FB467 /* TuCamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuCamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B7053225D1C585008FB467 /* TuCamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuCamTests.swift; sourceTree = "<group>"; };
+		18B7053425D1C585008FB467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B7053925D1C585008FB467 /* TuCamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuCamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B7053D25D1C585008FB467 /* TuCamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuCamUITests.swift; sourceTree = "<group>"; };
+		18B7053F25D1C585008FB467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18B7051525D1C582008FB467 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B7052B25D1C585008FB467 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B7053625D1C585008FB467 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18B7050F25D1C582008FB467 = {
+			isa = PBXGroup;
+			children = (
+				18B7051A25D1C582008FB467 /* TuCam */,
+				18B7053125D1C585008FB467 /* TuCamTests */,
+				18B7053C25D1C585008FB467 /* TuCamUITests */,
+				18B7051925D1C582008FB467 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18B7051925D1C582008FB467 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18B7051825D1C582008FB467 /* TuCam.app */,
+				18B7052E25D1C585008FB467 /* TuCamTests.xctest */,
+				18B7053925D1C585008FB467 /* TuCamUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18B7051A25D1C582008FB467 /* TuCam */ = {
+			isa = PBXGroup;
+			children = (
+				18B7051B25D1C582008FB467 /* AppDelegate.swift */,
+				18B7051D25D1C582008FB467 /* SceneDelegate.swift */,
+				18B7051F25D1C582008FB467 /* ViewController.swift */,
+				18B7052125D1C582008FB467 /* Main.storyboard */,
+				18B7052425D1C584008FB467 /* Assets.xcassets */,
+				18B7052625D1C584008FB467 /* LaunchScreen.storyboard */,
+				18B7052925D1C584008FB467 /* Info.plist */,
+			);
+			path = TuCam;
+			sourceTree = "<group>";
+		};
+		18B7053125D1C585008FB467 /* TuCamTests */ = {
+			isa = PBXGroup;
+			children = (
+				18B7053225D1C585008FB467 /* TuCamTests.swift */,
+				18B7053425D1C585008FB467 /* Info.plist */,
+			);
+			path = TuCamTests;
+			sourceTree = "<group>";
+		};
+		18B7053C25D1C585008FB467 /* TuCamUITests */ = {
+			isa = PBXGroup;
+			children = (
+				18B7053D25D1C585008FB467 /* TuCamUITests.swift */,
+				18B7053F25D1C585008FB467 /* Info.plist */,
+			);
+			path = TuCamUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18B7051725D1C582008FB467 /* TuCam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B7054225D1C585008FB467 /* Build configuration list for PBXNativeTarget "TuCam" */;
+			buildPhases = (
+				18B7051425D1C582008FB467 /* Sources */,
+				18B7051525D1C582008FB467 /* Frameworks */,
+				18B7051625D1C582008FB467 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TuCam;
+			productName = TuCam;
+			productReference = 18B7051825D1C582008FB467 /* TuCam.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18B7052D25D1C585008FB467 /* TuCamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B7054525D1C585008FB467 /* Build configuration list for PBXNativeTarget "TuCamTests" */;
+			buildPhases = (
+				18B7052A25D1C585008FB467 /* Sources */,
+				18B7052B25D1C585008FB467 /* Frameworks */,
+				18B7052C25D1C585008FB467 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18B7053025D1C585008FB467 /* PBXTargetDependency */,
+			);
+			name = TuCamTests;
+			productName = TuCamTests;
+			productReference = 18B7052E25D1C585008FB467 /* TuCamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		18B7053825D1C585008FB467 /* TuCamUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B7054825D1C585008FB467 /* Build configuration list for PBXNativeTarget "TuCamUITests" */;
+			buildPhases = (
+				18B7053525D1C585008FB467 /* Sources */,
+				18B7053625D1C585008FB467 /* Frameworks */,
+				18B7053725D1C585008FB467 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18B7053B25D1C585008FB467 /* PBXTargetDependency */,
+			);
+			name = TuCamUITests;
+			productName = TuCamUITests;
+			productReference = 18B7053925D1C585008FB467 /* TuCamUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18B7051025D1C582008FB467 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					18B7051725D1C582008FB467 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					18B7052D25D1C585008FB467 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 18B7051725D1C582008FB467;
+					};
+					18B7053825D1C585008FB467 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 18B7051725D1C582008FB467;
+					};
+				};
+			};
+			buildConfigurationList = 18B7051325D1C582008FB467 /* Build configuration list for PBXProject "TuCam" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18B7050F25D1C582008FB467;
+			productRefGroup = 18B7051925D1C582008FB467 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18B7051725D1C582008FB467 /* TuCam */,
+				18B7052D25D1C585008FB467 /* TuCamTests */,
+				18B7053825D1C585008FB467 /* TuCamUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18B7051625D1C582008FB467 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B7052825D1C584008FB467 /* LaunchScreen.storyboard in Resources */,
+				18B7052525D1C584008FB467 /* Assets.xcassets in Resources */,
+				18B7052325D1C582008FB467 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B7052C25D1C585008FB467 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B7053725D1C585008FB467 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18B7051425D1C582008FB467 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B7052025D1C582008FB467 /* ViewController.swift in Sources */,
+				18B7051C25D1C582008FB467 /* AppDelegate.swift in Sources */,
+				18B7051E25D1C582008FB467 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B7052A25D1C585008FB467 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B7053325D1C585008FB467 /* TuCamTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B7053525D1C585008FB467 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B7053E25D1C585008FB467 /* TuCamUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18B7053025D1C585008FB467 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18B7051725D1C582008FB467 /* TuCam */;
+			targetProxy = 18B7052F25D1C585008FB467 /* PBXContainerItemProxy */;
+		};
+		18B7053B25D1C585008FB467 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18B7051725D1C582008FB467 /* TuCam */;
+			targetProxy = 18B7053A25D1C585008FB467 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18B7052125D1C582008FB467 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18B7052225D1C582008FB467 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18B7052625D1C584008FB467 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18B7052725D1C584008FB467 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18B7054025D1C585008FB467 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		18B7054125D1C585008FB467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18B7054325D1C585008FB467 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ62GW8XPM;
+				INFOPLIST_FILE = TuCam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Nataland.TuCam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18B7054425D1C585008FB467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ62GW8XPM;
+				INFOPLIST_FILE = TuCam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Nataland.TuCam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		18B7054625D1C585008FB467 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ62GW8XPM;
+				INFOPLIST_FILE = TuCamTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Nataland.TuCamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TuCam.app/TuCam";
+			};
+			name = Debug;
+		};
+		18B7054725D1C585008FB467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ62GW8XPM;
+				INFOPLIST_FILE = TuCamTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Nataland.TuCamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TuCam.app/TuCam";
+			};
+			name = Release;
+		};
+		18B7054925D1C585008FB467 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ62GW8XPM;
+				INFOPLIST_FILE = TuCamUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Nataland.TuCamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TuCam;
+			};
+			name = Debug;
+		};
+		18B7054A25D1C585008FB467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ62GW8XPM;
+				INFOPLIST_FILE = TuCamUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Nataland.TuCamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TuCam;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18B7051325D1C582008FB467 /* Build configuration list for PBXProject "TuCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B7054025D1C585008FB467 /* Debug */,
+				18B7054125D1C585008FB467 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18B7054225D1C585008FB467 /* Build configuration list for PBXNativeTarget "TuCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B7054325D1C585008FB467 /* Debug */,
+				18B7054425D1C585008FB467 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18B7054525D1C585008FB467 /* Build configuration list for PBXNativeTarget "TuCamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B7054625D1C585008FB467 /* Debug */,
+				18B7054725D1C585008FB467 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18B7054825D1C585008FB467 /* Build configuration list for PBXNativeTarget "TuCamUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B7054925D1C585008FB467 /* Debug */,
+				18B7054A25D1C585008FB467 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18B7051025D1C582008FB467 /* Project object */;
+}
