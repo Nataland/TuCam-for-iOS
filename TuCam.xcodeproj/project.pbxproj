@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				5F3BB9FE25D45927008CFDCE /* Source */,
-				5F3BB9FD25D4591C008CFDCE /* Ressources */,
+				5F3BB9FD25D4591C008CFDCE /* Resources */,
 			);
 			path = TuCam;
 			sourceTree = "<group>";
@@ -119,14 +119,14 @@
 			path = TuCamUITests;
 			sourceTree = "<group>";
 		};
-		5F3BB9FD25D4591C008CFDCE /* Ressources */ = {
+		5F3BB9FD25D4591C008CFDCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				18B7052425D1C584008FB467 /* Assets.xcassets */,
 				18B7052625D1C584008FB467 /* LaunchScreen.storyboard */,
 				18B7052925D1C584008FB467 /* Info.plist */,
 			);
-			path = Ressources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		5F3BB9FE25D45927008CFDCE /* Source */ = {
@@ -438,7 +438,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VJ62GW8XPM;
-				INFOPLIST_FILE = TuCam/Info.plist;
+				INFOPLIST_FILE = TuCam/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +457,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VJ62GW8XPM;
-				INFOPLIST_FILE = TuCam/Info.plist;
+				INFOPLIST_FILE = TuCam/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
