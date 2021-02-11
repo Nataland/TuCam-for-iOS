@@ -13,6 +13,9 @@
 		18B7052825D1C584008FB467 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B7052625D1C584008FB467 /* LaunchScreen.storyboard */; };
 		18B7053325D1C585008FB467 /* TuCamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7053225D1C585008FB467 /* TuCamTests.swift */; };
 		18B7053E25D1C585008FB467 /* TuCamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7053D25D1C585008FB467 /* TuCamUITests.swift */; };
+		18B7057C25D46E76008FB467 /* TopToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7057B25D46E76008FB467 /* TopToolbarView.swift */; };
+		18B7058425D47569008FB467 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7058325D47569008FB467 /* CameraView.swift */; };
+		18B7058925D478D1008FB467 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7058825D478D1008FB467 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		18B7053925D1C585008FB467 /* TuCamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuCamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B7053D25D1C585008FB467 /* TuCamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuCamUITests.swift; sourceTree = "<group>"; };
 		18B7053F25D1C585008FB467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B7057B25D46E76008FB467 /* TopToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopToolbarView.swift; sourceTree = "<group>"; };
+		18B7058325D47569008FB467 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		18B7058825D478D1008FB467 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 			children = (
 				18B7051B25D1C582008FB467 /* AppDelegate.swift */,
 				18B7051F25D1C582008FB467 /* HomeViewController.swift */,
+				18B7057B25D46E76008FB467 /* TopToolbarView.swift */,
+				18B7058325D47569008FB467 /* CameraView.swift */,
+				18B7058825D478D1008FB467 /* UIView+Extensions.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -267,8 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B7057C25D46E76008FB467 /* TopToolbarView.swift in Sources */,
 				18B7052025D1C582008FB467 /* HomeViewController.swift in Sources */,
+				18B7058925D478D1008FB467 /* UIView+Extensions.swift in Sources */,
 				18B7051C25D1C582008FB467 /* AppDelegate.swift in Sources */,
+				18B7058425D47569008FB467 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
