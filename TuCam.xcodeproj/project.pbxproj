@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1806DB5C25DADA79005EF896 /* BottomToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806DB5B25DADA79005EF896 /* BottomToolbarView.swift */; };
 		18B7051C25D1C582008FB467 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7051B25D1C582008FB467 /* AppDelegate.swift */; };
 		18B7052025D1C582008FB467 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7051F25D1C582008FB467 /* HomeViewController.swift */; };
 		18B7052525D1C584008FB467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B7052425D1C584008FB467 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1806DB5B25DADA79005EF896 /* BottomToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolbarView.swift; sourceTree = "<group>"; };
 		18B7051825D1C582008FB467 /* TuCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B7051B25D1C582008FB467 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B7051F25D1C582008FB467 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				18B7057B25D46E76008FB467 /* TopToolbarView.swift */,
 				18B7058325D47569008FB467 /* CameraView.swift */,
 				18B7058825D478D1008FB467 /* UIView+Extensions.swift */,
+				1806DB5B25DADA79005EF896 /* BottomToolbarView.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				18B7057C25D46E76008FB467 /* TopToolbarView.swift in Sources */,
 				18B7052025D1C582008FB467 /* HomeViewController.swift in Sources */,
 				18B7058925D478D1008FB467 /* UIView+Extensions.swift in Sources */,
+				1806DB5C25DADA79005EF896 /* BottomToolbarView.swift in Sources */,
 				18B7051C25D1C582008FB467 /* AppDelegate.swift in Sources */,
 				18B7058425D47569008FB467 /* CameraView.swift in Sources */,
 			);
