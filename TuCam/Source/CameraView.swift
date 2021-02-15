@@ -14,23 +14,23 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 	
 	init() {
 		super.init(frame: CGRect.zero)
-		backgroundColor = .blue
+		backgroundColor = UIColor(named: "AccentColor")
 		
 		addSubview(cameraViewFinder)
 		cameraViewFinder.constrainToFill(parent: self)
 		
-		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
-			if UIImagePickerController.availableMediaTypes(for: UIImagePickerController.SourceType.camera) != nil{
-				camera.sourceType = .camera
-				camera.cameraDevice = .front
-				camera.delegate = self
-				camera.showsCameraControls = false
-				cameraViewFinder.addSubview(camera.view)
-				camera.view.constrainToFill(parent: cameraViewFinder)
-			}
-		}else{
-			print("no camera device found")
-		}
+//		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
+//			if UIImagePickerController.availableMediaTypes(for: UIImagePickerController.SourceType.camera) != nil{
+//				camera.sourceType = .camera
+//				camera.cameraDevice = .front
+//				camera.delegate = self
+//				camera.showsCameraControls = false
+//				cameraViewFinder.addSubview(camera.view)
+//				camera.view.constrainToFill(parent: cameraViewFinder)
+//			}
+//		}else{
+//			print("no camera device found")
+//		}
 	}
 	
 	required init?(coder: NSCoder) {

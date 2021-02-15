@@ -15,17 +15,19 @@ final class TopToolbarView : UIView {
 	
 	init() {
 		super.init(frame: CGRect.zero)
-		backgroundColor = .systemPink
-		timerButton.setTitle("Timer", for: .normal)
-		gridButton.setTitle("Grid", for: .normal)
-		flashButton.setTitle("Flash", for: .normal)
-		flipButton.setTitle("Flip", for: .normal)
+		timerButton.setImage(UIImage(systemName: "timer"), for: .normal)
+		gridButton.setImage(UIImage(systemName: "grid"), for: .normal)
+		flashButton.setImage(UIImage(systemName: "bolt"), for: .normal)
+		flipButton.setImage(UIImage(systemName: "camera.rotate"), for: .normal)
+		timerButton.tintColor = .white
+		flashButton.tintColor = .white
+		gridButton.tintColor = .white
+		flipButton.tintColor = .white
 		
 		let stackView = UIStackView(arrangedSubviews: [timerButton, gridButton, flashButton, flipButton])
 		stackView.axis = .horizontal
 		stackView.distribution = .fillEqually
-		stackView.backgroundColor = .red
-		
+		stackView.backgroundColor = .black
 		addSubview(stackView)
 		stackView.constrainToFill(parent: self)
 	}
