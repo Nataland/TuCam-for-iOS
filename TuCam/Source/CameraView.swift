@@ -14,7 +14,7 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 	
 	init() {
 		super.init(frame: CGRect.zero)
-		backgroundColor = .purple
+		backgroundColor = UIColor(named: "AccentColor")
 		
 		addSubview(cameraViewFinder)
 		cameraViewFinder.constrainToFill(parent: self)
