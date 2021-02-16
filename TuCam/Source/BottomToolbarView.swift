@@ -8,19 +8,27 @@
 import UIKit
 
 final class BottomToolbarView : UIView {
+	var homeModel: HomeModel
 	let galleryButton = UIButton()
 	let shutterButton = UIButton()
 	let frameButton = UIButton()
 	
-	init() {
+	init(homeModel: HomeModel) {
+		self.homeModel = homeModel
 		super.init(frame: CGRect.zero)
 		let largeConfig = UIImage.SymbolConfiguration(pointSize: 45, weight: .bold, scale: .large)
+		
 		galleryButton.setImage(UIImage(systemName: "photo.on.rectangle.fill"), for: .normal)
 		shutterButton.setImage(UIImage(systemName: "camera.circle.fill", withConfiguration: largeConfig), for: .normal)
 		frameButton.setImage(UIImage(systemName: "paintbrush.fill"), for: .normal)
+		
 		galleryButton.tintColor = .white
 		shutterButton.tintColor = .white
 		frameButton.tintColor = .white
+		
+		galleryButton.addTarget(self, action: #selector(galleryButtonClicked), for: .touchUpInside)
+		shutterButton.addTarget(self, action: #selector(shutterButtonClicked), for: .touchUpInside)
+		frameButton.addTarget(self, action: #selector(frameButtonClicked), for: .touchUpInside)
 		
 		let stackView = UIStackView(arrangedSubviews: [galleryButton, shutterButton, frameButton])
 		stackView.axis = .horizontal
@@ -28,25 +36,26 @@ final class BottomToolbarView : UIView {
 		stackView.backgroundColor = .black
 		addSubview(stackView)
 		stackView.constrainToFill(parent: self)
-		
-//		addSubview(galleryButton)
-//		addSubview(shutterButton)
-//		addSubview(frameButton)
-		
-//		galleryButton.translatesAutoresizingMaskIntoConstraints = false
-//		shutterButton.translatesAutoresizingMaskIntoConstraints = false
-//		frameButton.translatesAutoresizingMaskIntoConstraints = false
-//
-//		NSLayoutConstraint.activate([
-//			shutterButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-//			shutterButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-//			shutterButton.widthAnchor.constraint(equalToConstant: 50),
-//			shutterButton.heightAnchor.constraint(equalToConstant: 50)
-//		])
+		render()
+	}
+	
+	func render() {
+		// Todo
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+	
+	@objc func galleryButtonClicked(sender: UIButton!) {
+		// Todo
+	}
+	
+	@objc func shutterButtonClicked(sender: UIButton!) {
+		// Todo
+	}
+	
+	@objc func frameButtonClicked(sender: UIButton!) {
+		homeModel.toggleIsSelectingFrames()
+	}
 }
-
