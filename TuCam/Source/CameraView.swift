@@ -9,10 +9,12 @@ import UIKit
 import AVFoundation
 
 final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+	var homeModel: HomeModel
 	let camera = UIImagePickerController()
 	let cameraViewFinder = UIView()
 	
-	init() {
+	init(homeModel: HomeModel) {
+		self.homeModel = homeModel
 		super.init(frame: CGRect.zero)
 		backgroundColor = UIColor(named: "AccentColor")
 		
@@ -31,9 +33,14 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 //		}else{
 //			print("no camera device found")
 //		}
+		render()
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	func render() {
+		// Todo
 	}
 }

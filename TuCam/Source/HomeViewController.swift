@@ -9,6 +9,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 	
+	var homeModel: HomeModel?
+	lazy var topToolbarView = TopToolbarView(homeModel: homeModel!)
+	lazy var cameraView = CameraView(homeModel: homeModel!)
+	lazy var bottomToolbarView = BottomToolbarView(homeModel: homeModel!)
+	
 	init() {
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -20,11 +25,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		homeModel = HomeModel(controller: self)
 		navigationController?.setNavigationBarHidden(true, animated: false)
-		
-		let topToolbarView = TopToolbarView()
-		let cameraView = CameraView()
-		let bottomToolbarView = BottomToolbarView()
 		
 		view.addSubview(topToolbarView)
 		view.addSubview(cameraView)
@@ -49,11 +51,10 @@ class HomeViewController: UIViewController {
 			bottomToolbarView.heightAnchor.constraint(equalToConstant: 180)
 		])
     }
-
-	/*
-	- 4 icons evenly spaced - 
-	[Camera view]
-	- 2 medium size icons on the bottom right & left -
-	*/
+	
+	func renderViews() {
+		topToolbarView.render()
+		cameraView.render()
+		bottomToolbarView.render()
+	}
 }
-
