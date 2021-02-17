@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 	
 	var homeModel: HomeModel?
-	lazy var topToolbarView = TopToolbarView(homeModel: homeModel!)
+	lazy var topToolbarView = TopToolbarView(homeModel: homeModel!, delegate: self)
 	lazy var cameraView = CameraView(homeModel: homeModel!)
 	lazy var bottomToolbarView = BottomToolbarView(homeModel: homeModel!)
 	
@@ -56,5 +56,31 @@ class HomeViewController: UIViewController {
 		topToolbarView.render()
 		cameraView.render()
 		bottomToolbarView.render()
+	}
+}
+
+extension HomeViewController: CameraControlsDelegate {
+	func timerButtonClicked() {
+		
+	}
+	
+	func gridButtonClicked() {
+		
+	}
+	
+	func toggleFlashState() {
+		guard let model = homeModel else {
+			print("A home model is required to perform actions")
+			return
+		}
+		cameraView.camera.cameraFlashMode = model.flashState
+	}
+	
+	func flipCamera() {
+		guard let model = homeModel else {
+			print("A home model is required to perform actions")
+			return
+		}
+		cameraView.camera.cameraDevice = model.isFrontCamera ? .front : .rear
 	}
 }

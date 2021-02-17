@@ -8,6 +8,8 @@
 import UIKit
 
 final class BottomToolbarView : UIView {
+	private weak var delegate: CameraControlsDelegate?
+	
 	var homeModel: HomeModel
 	let galleryButton = UIButton()
 	let shutterButton = UIButton()
