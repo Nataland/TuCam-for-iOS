@@ -5,7 +5,7 @@
 //  Created by Natalie Zhang on 2021-02-15.
 //
 
-import Foundation
+import UIKit
 
 class HomeModel {
 	
@@ -19,14 +19,10 @@ class HomeModel {
 		case off, threeSeconds, tenSeconds
 	}
 	
-	enum FlashState {
-		case off, auto, on
-	}
-	
 	private(set) var isSelectingFrames: Bool = false
 	private(set) var frameSelected: Int = 0
 	private(set) var timerState: TimerState = .off
-	private(set) var flashState: FlashState = .off
+	private(set) var flashState: UIImagePickerController.CameraFlashMode = .off
 	private(set) var shouldShowGrid: Bool = false
 	private(set) var isFrontCamera: Bool = true
 	private(set) var countDown: Int? = nil
@@ -60,6 +56,8 @@ class HomeModel {
 		case .auto:
 			flashState = .on
 		case .on:
+			flashState = .off
+		@unknown default:
 			flashState = .off
 		}
 		controller.renderViews()

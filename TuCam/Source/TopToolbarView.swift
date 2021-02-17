@@ -8,14 +8,17 @@
 import UIKit
 
 final class TopToolbarView : UIView {
+	private weak var delegate: CameraControlsDelegate?
+	
 	var homeModel: HomeModel
 	let timerButton = UIButton()
 	let gridButton = UIButton()
 	let flashButton = UIButton()
 	let flipButton = UIButton()
 	
-	init(homeModel: HomeModel) {
+	init(homeModel: HomeModel, delegate: CameraControlsDelegate?) {
 		self.homeModel = homeModel
+		self.delegate = delegate
 		super.init(frame: CGRect.zero)
 		
 		timerButton.tintColor = .white
@@ -63,6 +66,8 @@ final class TopToolbarView : UIView {
 			flashButton.setImage(UIImage(systemName: "bolt.badge.a"), for: .normal)
 		case .on:
 			flashButton.setImage(UIImage(systemName: "bolt"), for: .normal)
+		@unknown default:
+			flashButton.setImage(UIImage(systemName: "bolt.slash"), for: .normal)
 		}
 	}
 	
@@ -76,9 +81,11 @@ final class TopToolbarView : UIView {
 	
 	@objc func flashButtonClicked(sender: UIButton!) {
 		homeModel.toggleFlashState()
+		delegate?.toggleFlashState()
 	}
 	
 	@objc func flipButtonClicked(sender: UIButton!) {
 		homeModel.toggleIsFrontCamera()
+		delegate?.flipCamera()
 	}
 }
