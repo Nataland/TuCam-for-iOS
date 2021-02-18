@@ -27,6 +27,39 @@ class HomeModel {
 	private(set) var isFrontCamera: Bool = true
 	private(set) var countDown: Int? = nil
 	
+	func getTimerText() -> String {
+		switch timerState {
+		case .off:
+			return ""
+		case .threeSeconds:
+			return "3s"
+		case .tenSeconds:
+			return "10s"
+		}
+	}
+	
+	func getTimerImage() -> UIImage? {
+		switch timerState {
+		case .off:
+			return UIImage(systemName: "timer")
+		case .threeSeconds, .tenSeconds:
+			return nil
+		}
+	}
+	
+	func getFlashImage() -> UIImage? {
+		switch flashState {
+		case .off:
+			return UIImage(systemName: "bolt.slash")
+		case .auto:
+			return UIImage(systemName: "bolt.badge.a")
+		case .on:
+			return UIImage(systemName: "bolt")
+		@unknown default:
+			return UIImage(systemName: "bolt.slash")
+		}
+	}
+	
 	func toggleIsSelectingFrames() {
 		isSelectingFrames = !isSelectingFrames
 		controller.renderViews()

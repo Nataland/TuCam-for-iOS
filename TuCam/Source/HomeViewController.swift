@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
 	var homeModel: HomeModel?
 	lazy var topToolbarView = TopToolbarView(homeModel: homeModel!, delegate: self)
 	lazy var cameraView = CameraView(homeModel: homeModel!)
-	lazy var bottomToolbarView = BottomToolbarView(homeModel: homeModel!)
+	lazy var bottomToolbarView = BottomToolbarView(homeModel: homeModel!, delegate: self)
 	
 	init() {
 		super.init(nibName: nil, bundle: nil)
@@ -50,6 +50,9 @@ class HomeViewController: UIViewController {
 			bottomToolbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 			bottomToolbarView.heightAnchor.constraint(equalToConstant: 180)
 		])
+		
+		renderViews()
+		initializeCamera()
     }
 	
 	func renderViews() {
@@ -57,17 +60,14 @@ class HomeViewController: UIViewController {
 		cameraView.render()
 		bottomToolbarView.render()
 	}
+	
+	func initializeCamera() {
+		toggleFlashState()
+		flipCamera()
+	}
 }
 
 extension HomeViewController: CameraControlsDelegate {
-	func timerButtonClicked() {
-		
-	}
-	
-	func gridButtonClicked() {
-		
-	}
-	
 	func toggleFlashState() {
 		guard let model = homeModel else {
 			print("A home model is required to perform actions")
@@ -82,5 +82,9 @@ extension HomeViewController: CameraControlsDelegate {
 			return
 		}
 		cameraView.camera.cameraDevice = model.isFrontCamera ? .front : .rear
+	}
+	
+	func takePicture() {
+		cameraView.camera.takePicture()
 	}
 }

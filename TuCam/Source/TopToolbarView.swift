@@ -37,7 +37,6 @@ final class TopToolbarView : UIView {
 		stackView.backgroundColor = .black
 		addSubview(stackView)
 		stackView.constrainToFill(parent: self)
-		render()
 	}
 	
 	required init?(coder: NSCoder) {
@@ -45,30 +44,10 @@ final class TopToolbarView : UIView {
 	}
 	
 	func render() {
-		switch homeModel.timerState {
-		case .off:
-			timerButton.setImage(UIImage(systemName: "timer"), for: .normal)
-			timerButton.setTitle("", for: .normal)
-		case .threeSeconds:
-			timerButton.setImage(nil, for: .normal)
-			timerButton.setTitle("3s", for: .normal)
-		case .tenSeconds:
-			timerButton.setImage(nil, for: .normal)
-			timerButton.setTitle("10s", for: .normal)
-		}
-		
+		timerButton.setImage(homeModel.getTimerImage(), for: .normal)
+		timerButton.setTitle(homeModel.getTimerText(), for: .normal)
 		gridButton.setImage(UIImage(systemName: homeModel.shouldShowGrid ? "rectangle.split.3x3" : "rectangle"), for: .normal)
-		
-		switch homeModel.flashState {
-		case .off:
-			flashButton.setImage(UIImage(systemName: "bolt.slash"), for: .normal)
-		case .auto:
-			flashButton.setImage(UIImage(systemName: "bolt.badge.a"), for: .normal)
-		case .on:
-			flashButton.setImage(UIImage(systemName: "bolt"), for: .normal)
-		@unknown default:
-			flashButton.setImage(UIImage(systemName: "bolt.slash"), for: .normal)
-		}
+		flashButton.setImage(homeModel.getFlashImage(), for: .normal)
 	}
 	
 	@objc func timerButtonClicked(sender: UIButton!) {

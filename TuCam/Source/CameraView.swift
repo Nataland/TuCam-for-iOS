@@ -21,8 +21,8 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 		addSubview(cameraViewFinder)
 		cameraViewFinder.constrainToFill(parent: self)
 		
-		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
-			if UIImagePickerController.availableMediaTypes(for: UIImagePickerController.SourceType.camera) != nil{
+		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+			if UIImagePickerController.availableMediaTypes(for: UIImagePickerController.SourceType.camera) != nil {
 				camera.sourceType = .camera
 				camera.cameraDevice = .front
 				camera.delegate = self
@@ -30,14 +30,19 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 				cameraViewFinder.addSubview(camera.view)
 				camera.view.constrainToFill(parent: cameraViewFinder)
 			}
-		}else{
+		} else {
 			print("no camera device found")
 		}
-		render()
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		picker.dismiss(animated: true)
+		let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+		print("picture taken", image?.size ?? 0)
 	}
 	
 	func render() {
