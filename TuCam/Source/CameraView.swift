@@ -12,14 +12,20 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 	var homeModel: HomeModel
 	let camera = UIImagePickerController()
 	let cameraViewFinder = UIView()
+	let gridView = GridView()
+	let frameOverlay = UIImageView()
 	
 	init(homeModel: HomeModel) {
 		self.homeModel = homeModel
 		super.init(frame: CGRect.zero)
-		backgroundColor = UIColor(named: "AccentColor")
 		
 		addSubview(cameraViewFinder)
+		addSubview(gridView)
+		addSubview(frameOverlay)
+		
 		cameraViewFinder.constrainToFill(parent: self)
+		gridView.constrainToFill(parent: self)
+		frameOverlay.constrainToFill(parent: self)
 		
 		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
 			if UIImagePickerController.availableMediaTypes(for: UIImagePickerController.SourceType.camera) != nil {
@@ -28,6 +34,7 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 				camera.delegate = self
 				camera.showsCameraControls = false
 				cameraViewFinder.addSubview(camera.view)
+				camera.cameraOverlayView = frameOverlay
 				camera.view.constrainToFill(parent: cameraViewFinder)
 			}
 		} else {
@@ -46,6 +53,7 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 	}
 	
 	func render() {
-		// Todo
+		frameOverlay.image = homeModel.getFrameImage()
+		gridView.isHidden = !homeModel.shouldShowGrid
 	}
 }
