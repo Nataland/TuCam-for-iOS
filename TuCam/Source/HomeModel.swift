@@ -18,6 +18,8 @@ class HomeModel {
 	enum TimerState {
 		case off, threeSeconds, tenSeconds
 	}
+	
+	
 	private let frames = [Int](0...28).map { UIImage(named: "frame\($0)") }
 	private(set) var isSelectingFrames: Bool = false
 	private(set) var frameSelected: Int = 0

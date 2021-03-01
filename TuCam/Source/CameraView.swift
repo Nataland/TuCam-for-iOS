@@ -14,18 +14,24 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 	let cameraViewFinder = UIView()
 	let gridView = GridView()
 	let frameOverlay = UIImageView()
+	let cameraOverlayView = UIView()
+	// Todo: aspect ratio of camera view and content mode of frame overlay
 	
 	init(homeModel: HomeModel) {
 		self.homeModel = homeModel
 		super.init(frame: CGRect.zero)
 		
 		addSubview(cameraViewFinder)
-		addSubview(gridView)
-		addSubview(frameOverlay)
+		addSubview(cameraOverlayView)
+		cameraOverlayView.addSubview(gridView)
+		cameraOverlayView.addSubview(frameOverlay)
 		
 		cameraViewFinder.constrainToFill(parent: self)
-		gridView.constrainToFill(parent: self)
-		frameOverlay.constrainToFill(parent: self)
+		cameraOverlayView.constrainToFill(parent: self)
+		gridView.constrainToFill(parent: cameraOverlayView)
+		frameOverlay.constrainToFill(parent: cameraOverlayView)
+		
+		frameOverlay.contentMode = .scaleAspectFit
 		
 		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
 			if UIImagePickerController.availableMediaTypes(for: UIImagePickerController.SourceType.camera) != nil {
@@ -34,7 +40,6 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 				camera.delegate = self
 				camera.showsCameraControls = false
 				cameraViewFinder.addSubview(camera.view)
-				camera.cameraOverlayView = frameOverlay
 				camera.view.constrainToFill(parent: cameraViewFinder)
 			}
 		} else {

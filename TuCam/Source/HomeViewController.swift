@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
 	lazy var topToolbarView = TopToolbarView(homeModel: homeModel!, delegate: self)
 	lazy var cameraView = CameraView(homeModel: homeModel!)
 	lazy var bottomToolbarView = BottomToolbarView(homeModel: homeModel!, delegate: self)
+	lazy var collectionView = FramePreviewsCollectionView()
 	
 	init() {
 		super.init(nibName: nil, bundle: nil)
@@ -30,11 +31,13 @@ class HomeViewController: UIViewController {
 		
 		view.addSubview(topToolbarView)
 		view.addSubview(cameraView)
+		view.addSubview(collectionView)
 		view.addSubview(bottomToolbarView)
 		
 		topToolbarView.translatesAutoresizingMaskIntoConstraints = false
 		cameraView.translatesAutoresizingMaskIntoConstraints = false
 		bottomToolbarView.translatesAutoresizingMaskIntoConstraints = false
+		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		
 		NSLayoutConstraint.activate([
 			topToolbarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 35),
@@ -45,10 +48,14 @@ class HomeViewController: UIViewController {
 			cameraView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			cameraView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 			cameraView.bottomAnchor.constraint(equalTo: bottomToolbarView.topAnchor),
+			collectionView.bottomAnchor.constraint(equalTo: bottomToolbarView.topAnchor),
+			collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+			collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+			collectionView.heightAnchor.constraint(equalToConstant: 100),
 			bottomToolbarView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 			bottomToolbarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			bottomToolbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-			bottomToolbarView.heightAnchor.constraint(equalToConstant: 180)
+			bottomToolbarView.heightAnchor.constraint(equalToConstant: 180),
 		])
 		
 		renderViews()
