@@ -23,8 +23,18 @@ class FramePreviewCell : UICollectionViewCell {
 		dannyImage.constrainToFill(parent: contentView)
 		frameImage.constrainToFill(parent: contentView)
 		
+		frameImage.layer.borderColor = UIColor.white.cgColor
+		
 		self.dannyImage = dannyImage
 		self.frameImage = frameImage
+	}
+	
+	func setSelected(_ value: Bool) {
+		if value {
+			frameImage.layer.borderWidth = 1
+		} else {
+			frameImage.layer.borderWidth = 0
+		}
 	}
 	
 	required init?(coder: NSCoder) {

@@ -71,7 +71,7 @@ class HomeModel {
 		controller.renderViews()
 	}
 	
-	func updateFrameSelected(newFrame: Int) {
+	func updateFrameSelected(_ newFrame: Int) {
 		frameSelected = newFrame
 		controller.renderViews()
 	}

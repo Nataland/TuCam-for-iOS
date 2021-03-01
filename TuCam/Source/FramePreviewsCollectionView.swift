@@ -8,15 +8,17 @@
 import UIKit
 
 final class FramePreviewsCollectionView : UIView, UICollectionViewDataSource, UICollectionViewDelegate {
+	var onSelectUpdateHandler: ((Int) -> Void)?
 	var collectionView: UICollectionView
 	private let frames = [Int](0...28).map { UIImage(named: "frame\($0)") }
 	private let reuseIdentifier = "cell"
+	private var selectedIndex: Int = 0
 	
 	init() {
 		let layout = UICollectionViewFlowLayout()
 		layout.scrollDirection = .horizontal
-		layout.itemSize = CGSize(width: 40, height: 60)
-		layout.register(FramePreviewCell.self, forDecorationViewOfKind: reuseIdentifier) // what is this?
+		layout.itemSize = CGSize(width: 60, height: 90)
+		layout.register(FramePreviewCell.self, forDecorationViewOfKind: reuseIdentifier)
 		collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		super.init(frame: CGRect.zero)
 		collectionView.delegate = self
@@ -38,6 +40,7 @@ final class FramePreviewsCollectionView : UIView, UICollectionViewDataSource, UI
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let framePreviewCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! FramePreviewCell
+		framePreviewCell.setSelected(selectedIndex == indexPath.row)
 		framePreviewCell.frameImage.image = frames[indexPath.row]
 		return framePreviewCell
 	}
@@ -45,11 +48,12 @@ final class FramePreviewsCollectionView : UIView, UICollectionViewDataSource, UI
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 1
 	}
-
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		// Todo: on frame selected
-		print(indexPath)
-	}
+	
 	
 	// MARK: -UICollectionViewDelegate
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		selectedIndex = indexPath.row
+		collectionView.reloadData()
+		onSelectUpdateHandler?(indexPath.row)
+	}
 }
