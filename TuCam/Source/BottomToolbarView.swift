@@ -15,8 +15,9 @@ final class BottomToolbarView : UIView {
 	let shutterButton = UIButton()
 	let frameButton = UIButton()
 	
-	init(homeModel: HomeModel) {
+	init(homeModel: HomeModel, delegate: CameraControlsDelegate) {
 		self.homeModel = homeModel
+		self.delegate = delegate
 		super.init(frame: CGRect.zero)
 		let largeConfig = UIImage.SymbolConfiguration(pointSize: 45, weight: .bold, scale: .large)
 		
@@ -38,7 +39,6 @@ final class BottomToolbarView : UIView {
 		stackView.backgroundColor = .black
 		addSubview(stackView)
 		stackView.constrainToFill(parent: self)
-		render()
 	}
 	
 	func render() {
@@ -54,7 +54,7 @@ final class BottomToolbarView : UIView {
 	}
 	
 	@objc func shutterButtonClicked(sender: UIButton!) {
-		// Todo
+		delegate?.takePicture()
 	}
 	
 	@objc func frameButtonClicked(sender: UIButton!) {

@@ -21,7 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Take photo to apply filters on</string>
+	<string>TuCam needs access to your camera to take pictures</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>TuCam needs access to your photo library to save pictures</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
