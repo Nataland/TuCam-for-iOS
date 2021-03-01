@@ -40,6 +40,7 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 				camera.delegate = self
 				camera.showsCameraControls = false
 				cameraViewFinder.addSubview(camera.view)
+				camera.view.contentMode = .scaleAspectFit
 				camera.view.constrainToFill(parent: cameraViewFinder)
 			}
 		} else {

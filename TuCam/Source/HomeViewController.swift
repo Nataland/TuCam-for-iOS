@@ -39,6 +39,10 @@ class HomeViewController: UIViewController {
 		bottomToolbarView.translatesAutoresizingMaskIntoConstraints = false
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		
+		collectionView.onSelectUpdateHandler = { [weak self] index in
+			self?.homeModel?.updateFrameSelected(index)
+		}
+		
 		NSLayoutConstraint.activate([
 			topToolbarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 35),
 			topToolbarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -47,16 +51,18 @@ class HomeViewController: UIViewController {
 			cameraView.topAnchor.constraint(equalTo: topToolbarView.bottomAnchor),
 			cameraView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			cameraView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-			cameraView.bottomAnchor.constraint(equalTo: bottomToolbarView.topAnchor),
+			cameraView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 2 * 3),
 			collectionView.bottomAnchor.constraint(equalTo: bottomToolbarView.topAnchor),
 			collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-			collectionView.heightAnchor.constraint(equalToConstant: 100),
+			collectionView.heightAnchor.constraint(equalToConstant: 90),
 			bottomToolbarView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 			bottomToolbarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			bottomToolbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-			bottomToolbarView.heightAnchor.constraint(equalToConstant: 180),
+			bottomToolbarView.topAnchor.constraint(equalTo: cameraView.bottomAnchor)
 		])
+		
+		cameraView.clipsToBounds = true
 		
 		renderViews()
 		initializeCamera()
@@ -66,6 +72,7 @@ class HomeViewController: UIViewController {
 		topToolbarView.render()
 		cameraView.render()
 		bottomToolbarView.render()
+		collectionView.isHidden = !(homeModel?.isSelectingFrames == true)
 	}
 	
 	func initializeCamera() {
