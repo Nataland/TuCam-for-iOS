@@ -8,13 +8,13 @@
 import UIKit
 import AVFoundation
 
-final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+final class CameraView : UIView {
 	var homeModel: HomeModel
-	let camera = UIImagePickerController()
 	let cameraViewFinder = UIView()
 	let gridView = GridView()
 	let frameOverlay = UIImageView()
 	let cameraOverlayView = UIView()
+	let cameraSession = CameraSession()
 	// Todo: aspect ratio of camera view and content mode of frame overlay
 	
 	init(homeModel: HomeModel) {
@@ -32,34 +32,28 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 		frameOverlay.constrainToFill(parent: cameraOverlayView)
 		
 		frameOverlay.contentMode = .scaleAspectFit
-		
-		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-			if UIImagePickerController.availableMediaTypes(for: UIImagePickerController.SourceType.camera) != nil {
-				camera.sourceType = .camera
-				camera.cameraDevice = .front
-				camera.delegate = self
-				camera.showsCameraControls = false
-				cameraViewFinder.addSubview(camera.view)
-				camera.view.contentMode = .scaleAspectFit
-				camera.view.constrainToFill(parent: cameraViewFinder)
+		cameraSession.onViewReady = { [weak self] layer in
+			guard let self = self else { return }
+			if let sublayer = self.cameraViewFinder.layer.sublayers?.first {
+				sublayer.removeFromSuperlayer()
 			}
-		} else {
-			print("no camera device found")
+			
+			layer.videoGravity = .resizeAspectFill
+			layer.bounds = self.cameraViewFinder.bounds
+			//layer.position = CGPoint(x: CGRect.midX(self.cameraViewFinder.bounds), y: CGRect.midY(self.cameraViewFinder.bounds))
+			self.cameraViewFinder.layer.addSublayer(layer)
 		}
+		
+		cameraSession.findDevice(with: homeModel.isFrontCamera ? .front : .back)
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-		picker.dismiss(animated: true)
-		let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-		print("picture taken", image?.size ?? 0)
-	}
-	
 	func render() {
 		frameOverlay.image = homeModel.getFrameImage()
 		gridView.isHidden = !homeModel.shouldShowGrid
+		cameraSession.findDevice(with: homeModel.isFrontCamera ? .front : .back)
 	}
 }
