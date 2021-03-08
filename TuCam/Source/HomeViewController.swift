@@ -83,11 +83,11 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: CameraControlsDelegate {
 	func toggleFlashState() {
-		guard let model = homeModel else {
-			print("A home model is required to perform actions")
-			return
-		}
-		cameraView.camera.cameraFlashMode = model.flashState
+//		guard let model = homeModel else {
+//			print("A home model is required to perform actions")
+//			return
+//		}
+		// todo
 	}
 	
 	func flipCamera() {
@@ -95,10 +95,10 @@ extension HomeViewController: CameraControlsDelegate {
 			print("A home model is required to perform actions")
 			return
 		}
-		cameraView.camera.cameraDevice = model.isFrontCamera ? .front : .rear
+		cameraView.cameraSession.findDevice(with: model.isFrontCamera ? .front : .back)
 	}
 	
 	func takePicture() {
-		cameraView.camera.takePicture()
+		// todo
 	}
 }
