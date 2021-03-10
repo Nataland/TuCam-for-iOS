@@ -14,7 +14,11 @@ final class FramePreviewsCollectionView : UIView, UICollectionViewDataSource, UI
 	private let reuseIdentifier = "cell"
 	private var selectedIndex: Int = 0
 	
-	init() {
+	enum Context {
+		case frame
+		case filter
+	}
+	init(context: Context = .frame) {
 		let layout = UICollectionViewFlowLayout()
 		layout.scrollDirection = .horizontal
 		layout.itemSize = CGSize(width: 60, height: 90)

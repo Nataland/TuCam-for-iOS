@@ -13,6 +13,8 @@
 		18340E5825DDF7DB00001C38 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18340E5725DDF7DB00001C38 /* GridView.swift */; };
 		18340E5D25DF075300001C38 /* FramePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18340E5C25DF075300001C38 /* FramePreviewCell.swift */; };
 		18340E6525DF101900001C38 /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18340E6425DF101900001C38 /* EditingViewController.swift */; };
+		1890B67A25F9585B0023F164 /* EditingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890B67925F9585B0023F164 /* EditingImageView.swift */; };
+		1890B67F25F9587B0023F164 /* EditingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890B67E25F9587B0023F164 /* EditingModel.swift */; };
 		18B7051C25D1C582008FB467 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7051B25D1C582008FB467 /* AppDelegate.swift */; };
 		18B7052025D1C582008FB467 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7051F25D1C582008FB467 /* HomeViewController.swift */; };
 		18B7052525D1C584008FB467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B7052425D1C584008FB467 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		18340E5725DDF7DB00001C38 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		18340E5C25DF075300001C38 /* FramePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramePreviewCell.swift; sourceTree = "<group>"; };
 		18340E6425DF101900001C38 /* EditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
+		1890B67925F9585B0023F164 /* EditingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingImageView.swift; sourceTree = "<group>"; };
+		1890B67E25F9587B0023F164 /* EditingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingModel.swift; sourceTree = "<group>"; };
 		18B7051825D1C582008FB467 /* TuCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B7051B25D1C582008FB467 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B7051F25D1C582008FB467 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1890B68325F95BB00023F164 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18B7051F25D1C582008FB467 /* HomeViewController.swift */,
+				18B7057B25D46E76008FB467 /* TopToolbarView.swift */,
+				18B7058325D47569008FB467 /* CameraView.swift */,
+				1806DB5B25DADA79005EF896 /* BottomToolbarView.swift */,
+				1806DB7025DAE13E005EF896 /* HomeModel.swift */,
+				18340E5225DDAFC300001C38 /* CameraControlsDelegate.swift */,
+				18340E5725DDF7DB00001C38 /* GridView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1890B68425F95BB80023F164 /* Editing */ = {
+			isa = PBXGroup;
+			children = (
+				18340E6425DF101900001C38 /* EditingViewController.swift */,
+				1890B67925F9585B0023F164 /* EditingImageView.swift */,
+				1890B67E25F9587B0023F164 /* EditingModel.swift */,
+			);
+			path = Editing;
+			sourceTree = "<group>";
+		};
 		18B7050F25D1C582008FB467 = {
 			isa = PBXGroup;
 			children = (
@@ -152,17 +180,11 @@
 		5F3BB9FE25D45927008CFDCE /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1890B68425F95BB80023F164 /* Editing */,
+				1890B68325F95BB00023F164 /* Home */,
 				18B7051B25D1C582008FB467 /* AppDelegate.swift */,
-				18B7051F25D1C582008FB467 /* HomeViewController.swift */,
-				18B7057B25D46E76008FB467 /* TopToolbarView.swift */,
-				18B7058325D47569008FB467 /* CameraView.swift */,
 				18B7058825D478D1008FB467 /* UIView+Extensions.swift */,
-				1806DB5B25DADA79005EF896 /* BottomToolbarView.swift */,
-				1806DB7025DAE13E005EF896 /* HomeModel.swift */,
-				18340E5225DDAFC300001C38 /* CameraControlsDelegate.swift */,
-				18340E5725DDF7DB00001C38 /* GridView.swift */,
 				18340E5C25DF075300001C38 /* FramePreviewCell.swift */,
-				18340E6425DF101900001C38 /* EditingViewController.swift */,
 				18EEBBD725E43C4E00163443 /* FramePreviewsCollectionView.swift */,
 			);
 			path = Source;
@@ -299,6 +321,7 @@
 			files = (
 				18B7057C25D46E76008FB467 /* TopToolbarView.swift in Sources */,
 				18B7052025D1C582008FB467 /* HomeViewController.swift in Sources */,
+				1890B67F25F9587B0023F164 /* EditingModel.swift in Sources */,
 				18340E5D25DF075300001C38 /* FramePreviewCell.swift in Sources */,
 				18B7058925D478D1008FB467 /* UIView+Extensions.swift in Sources */,
 				1806DB7125DAE13E005EF896 /* HomeModel.swift in Sources */,
@@ -307,6 +330,7 @@
 				18B7051C25D1C582008FB467 /* AppDelegate.swift in Sources */,
 				18340E6525DF101900001C38 /* EditingViewController.swift in Sources */,
 				18B7058425D47569008FB467 /* CameraView.swift in Sources */,
+				1890B67A25F9585B0023F164 /* EditingImageView.swift in Sources */,
 				18340E5825DDF7DB00001C38 /* GridView.swift in Sources */,
 				18340E5325DDAFC300001C38 /* CameraControlsDelegate.swift in Sources */,
 			);
