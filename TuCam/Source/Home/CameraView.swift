@@ -17,6 +17,7 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 	let cameraOverlayView = UIView()
 	// Todo: aspect ratio of camera view and content mode of frame overlay
 	
+	var onPictureTaken: ((UIImage) -> Void)?
 	init(homeModel: HomeModel) {
 		self.homeModel = homeModel
 		super.init(frame: CGRect.zero)
@@ -53,9 +54,11 @@ final class CameraView : UIView, UIImagePickerControllerDelegate, UINavigationCo
 	}
 	
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-		picker.dismiss(animated: true)
-		let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-		print("picture taken", image?.size ?? 0)
+		guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+			return
+		}
+		print("picture taken", image.size)
+		onPictureTaken?(image)
 	}
 	
 	func render() {

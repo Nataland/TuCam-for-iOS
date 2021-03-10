@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
 	init() {
 		super.init(nibName: nil, bundle: nil)
 	}
-	
+
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
@@ -28,6 +28,9 @@ class HomeViewController: UIViewController {
 		
 		homeModel = HomeModel(controller: self)
 		navigationController?.setNavigationBarHidden(true, animated: false)
+		cameraView.onPictureTaken = { [weak self] image in
+			self?.presentEditingViewController(with: image)
+		}
 		
 		view.addSubview(topToolbarView)
 		view.addSubview(cameraView)
@@ -44,14 +47,14 @@ class HomeViewController: UIViewController {
 		}
 		
 		NSLayoutConstraint.activate([
-			topToolbarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 35),
+			topToolbarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
 			topToolbarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			topToolbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 			topToolbarView.heightAnchor.constraint(equalToConstant: 60),
 			cameraView.topAnchor.constraint(equalTo: topToolbarView.bottomAnchor),
 			cameraView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			cameraView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-			cameraView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 2 * 3),
+			cameraView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 3 * 4),
 			collectionView.bottomAnchor.constraint(equalTo: bottomToolbarView.topAnchor),
 			collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -67,6 +70,14 @@ class HomeViewController: UIViewController {
 		renderViews()
 		initializeCamera()
     }
+	
+	func presentEditingViewController(with image: UIImage) {
+		guard let frameImage = homeModel?.getFrameImage() else {
+			return
+		}
+		let controller = EditingViewController(baseImage: image, decorationFrame: frameImage)
+		self.navigationController?.pushViewController(controller, animated: true)
+	}
 	
 	func renderViews() {
 		topToolbarView.render()
