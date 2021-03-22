@@ -5,6 +5,7 @@
 //  Created by Natalie Zhang on 2021-03-08.
 //
 import UIKit
+import GPUImage
 
 class EditingModel {
 
@@ -19,12 +20,18 @@ class EditingModel {
 	}
 
 	private let frames = [Int](0...28).map { UIImage(named: "frame\($0)") } // need to share this will home model
+	
 	private(set) var editingMode: EditingMode = .selectingFilters
 	private(set) var frameSelected: Int = 0
 	private(set) var filterSelected: Int = 0
 
-	func getFrameImage() -> UIImage? {
-		return frames[frameSelected]
+	func getFrameImage() -> UIImage {
+		return frames[frameSelected]!
+	}
+	
+	func getFilter() -> BasicOperation {
+		let filters = Filter.allCases.map { $0.getFilter() }
+		return filters[filterSelected]
 	}
 
 	func toggleEditingMode() {
