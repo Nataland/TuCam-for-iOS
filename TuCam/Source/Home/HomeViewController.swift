@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
 	lazy var topToolbarView = TopToolbarView(homeModel: homeModel!, delegate: self)
 	lazy var cameraView = CameraView(homeModel: homeModel!)
 	lazy var bottomToolbarView = BottomToolbarView(homeModel: homeModel!, delegate: self)
-	lazy var collectionView = FramePreviewsCollectionView()
+	lazy var collectionView = FramePreviewsCollectionView(context: .frame)
 	
 	init() {
 		super.init(nibName: nil, bundle: nil)
@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
 			collectionView.bottomAnchor.constraint(equalTo: bottomToolbarView.topAnchor),
 			collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-			collectionView.heightAnchor.constraint(equalToConstant: 90),
+			collectionView.heightAnchor.constraint(equalToConstant: FramePreviewsCollectionView.Context.frame.size.height),
 			bottomToolbarView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 			bottomToolbarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			bottomToolbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),

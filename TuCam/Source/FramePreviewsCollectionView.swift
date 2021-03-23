@@ -10,18 +10,38 @@ import UIKit
 final class FramePreviewsCollectionView : UIView, UICollectionViewDataSource, UICollectionViewDelegate {
 	var onSelectUpdateHandler: ((Int) -> Void)?
 	var collectionView: UICollectionView
-	private let frames = [Int](0...28).map { UIImage(named: "frame\($0)") }
+	private let context: Context
 	private let reuseIdentifier = "cell"
 	private var selectedIndex: Int = 0
 	
 	enum Context {
 		case frame
 		case filter
+		
+		var images: [UIImage] {
+			switch self {
+			case .frame:
+				return [Int](0...28).compactMap { UIImage(named: "frame\($0)") }
+			case .filter:
+				return Filter.allCases.map { $0.getPreviewImage() }
+			}
+		}
+		
+		var size: CGSize {
+			switch self {
+			case .frame:
+				return CGSize(width: 60, height: 80)
+			case .filter:
+				return CGSize(width: 60, height: 60)
+			}
+		}
 	}
-	init(context: Context = .frame) {
+	
+	init(context: Context) {
+		self.context = context
 		let layout = UICollectionViewFlowLayout()
 		layout.scrollDirection = .horizontal
-		layout.itemSize = CGSize(width: 60, height: 90)
+		layout.itemSize = context.size
 		layout.register(FramePreviewCell.self, forDecorationViewOfKind: reuseIdentifier)
 		collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		super.init(frame: CGRect.zero)
@@ -39,13 +59,13 @@ final class FramePreviewsCollectionView : UIView, UICollectionViewDataSource, UI
 	
 	// MARK: -UICollectionViewDataSource
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return frames.count
+		return context.images.count
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let framePreviewCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! FramePreviewCell
 		framePreviewCell.setSelected(selectedIndex == indexPath.row)
-		framePreviewCell.frameImage.image = frames[indexPath.row]
+		framePreviewCell.frameImage.image = context.images[indexPath.row]
 		return framePreviewCell
 	}
 	
