@@ -15,7 +15,7 @@ enum Filter: CaseIterable {
 	case grayscale
 	case monochrome
 	case sepia
-//	case smoothToon
+	case smoothToon
 	case virance
 	case vignette
 	case zoomBlur
@@ -30,8 +30,8 @@ enum Filter: CaseIterable {
 			return UIImage(named: "demo_monochrome")!
 		case .sepia:
 			return UIImage(named: "demo_sepia")!
-//		case .smoothToon:
-//			return UIImage(named: "demo_smooth_toon")!
+		case .smoothToon:
+			return UIImage(named: "demo_smooth_toon")!
 		case .virance:
 			return UIImage(named: "demo_vibrance")!
 		case .vignette:
@@ -41,25 +41,23 @@ enum Filter: CaseIterable {
 		}
 	}
 	
-	func getFilter() -> BasicOperation {
-		let saturationAdjustment = SaturationAdjustment()
-		saturationAdjustment.saturation = 0
-		
-		let vibrance = Vibrance()
-		vibrance.vibrance = 1.2
-		
+	func getFilter() -> ImageProcessingOperation {
 		switch self {
 		case .falseColor:
 			return FalseColor()
 		case .grayscale:
+			let saturationAdjustment = SaturationAdjustment()
+			saturationAdjustment.saturation = 0
 			return saturationAdjustment
 		case .monochrome:
 			return MonochromeFilter()
 		case .sepia:
 			return SepiaToneFilter()
-//		case .smoothToon:
-//			return SmoothToonFilter() as ImageProcessingOperation
+		case .smoothToon:
+			return SmoothToonFilter()
 		case .virance:
+			let vibrance = Vibrance()
+			vibrance.vibrance = 1.2
 			return vibrance
 		case .vignette:
 			return Vignette()

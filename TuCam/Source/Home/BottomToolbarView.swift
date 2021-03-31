@@ -50,7 +50,7 @@ final class BottomToolbarView : UIView {
 	}
 	
 	@objc func galleryButtonClicked(sender: UIButton!) {
-		// Todo
+		delegate?.pickFromPhotoLibrary()
 	}
 	
 	@objc func shutterButtonClicked(sender: UIButton!) {

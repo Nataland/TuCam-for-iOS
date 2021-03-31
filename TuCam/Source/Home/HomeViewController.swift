@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
 	lazy var cameraView = CameraView(homeModel: homeModel!)
 	lazy var bottomToolbarView = BottomToolbarView(homeModel: homeModel!, delegate: self)
 	lazy var collectionView = FramePreviewsCollectionView(context: .frame)
+	lazy var libraryPicker = UIImagePickerController()
 	
 	init() {
 		super.init(nibName: nil, bundle: nil)
@@ -44,6 +45,16 @@ class HomeViewController: UIViewController {
 		
 		collectionView.onSelectUpdateHandler = { [weak self] index in
 			self?.homeModel?.updateFrameSelected(index)
+		}
+		
+		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+			if UIImagePickerController.availableMediaTypes(for: UIImagePickerController.SourceType.photoLibrary) != nil {
+				libraryPicker.sourceType = .photoLibrary
+				libraryPicker.delegate = self
+				libraryPicker.allowsEditing = true
+			}
+		} else {
+			print("no photo library found")
 		}
 		
 		NSLayoutConstraint.activate([
@@ -111,5 +122,26 @@ extension HomeViewController: CameraControlsDelegate {
 	
 	func takePicture() {
 		cameraView.camera.takePicture()
+	}
+	
+	func pickFromPhotoLibrary() {
+		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+			if UIImagePickerController.availableMediaTypes(for: UIImagePickerController.SourceType.photoLibrary) != nil {
+				present(libraryPicker, animated: true)
+			}
+		}
+	}
+}
+
+extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+			return
+		}
+		print("picture chosen", image.size)
+		self.dismiss(animated: true, completion: nil)
+		libraryPicker.dismiss(animated: true) { [weak self] in
+			self?.presentEditingViewController(with: image)
+		}
 	}
 }

@@ -32,7 +32,7 @@ final class FramePreviewsCollectionView : UIView, UICollectionViewDataSource, UI
 			case .frame:
 				return CGSize(width: 60, height: 80)
 			case .filter:
-				return CGSize(width: 60, height: 60)
+				return CGSize(width: 80, height: 80)
 			}
 		}
 	}

@@ -29,8 +29,8 @@ class EditingModel {
 		return frames[frameSelected]!
 	}
 	
-	func getFilter() -> BasicOperation {
-		let filters = Filter.allCases.map { $0.getFilter() }
+	func getFilter() -> Filter {
+		let filters = Filter.allCases
 		return filters[filterSelected]
 	}
 

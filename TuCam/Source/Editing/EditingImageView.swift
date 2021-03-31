@@ -16,6 +16,7 @@ final class EditingImageView : UIView {
 		super.init(frame: CGRect.zero)
 
 		photo.image = baseImage
+		photo.contentMode = .scaleAspectFill
 		addSubview(photo)
 		addSubview(frameOverlay)
 

@@ -11,4 +11,5 @@ protocol CameraControlsDelegate: AnyObject {
 	func toggleFlashState()
 	func flipCamera()
 	func takePicture()
+	func pickFromPhotoLibrary()
 }
